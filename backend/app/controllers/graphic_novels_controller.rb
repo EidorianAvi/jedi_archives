@@ -1,0 +1,2 @@
+class GraphicNovelsController < ApplicationController
+end
