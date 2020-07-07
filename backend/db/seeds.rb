@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+NovelCollection.destroy_all
+GraphicNovelCollection.destroy_all
+Novel.destroy_all
+GraphicNovel.destroy_all
