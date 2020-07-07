@@ -15,7 +15,7 @@ class UsersController < ApplicationController
             username: params[:username],
             password: params[:password]
         )
-        render json: { user: @user}
+        render json: { user: @user}, status: :created
     end
 
 end
