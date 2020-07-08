@@ -9,22 +9,41 @@
   </head>
   <body>
     <header>
+      <form id="create-user-form">
+        <input type="text" placeholder="Username" name="username" required /><br />
+        <input type="password" placeholder="Password" name="password" required /><br/>
+        <input type="submit" value="Create User" />
+      </form><br>
       <form id="login-form">
         <input type="text" placeholder="Username" name="username" required/><br />
         <input type="password" placeholder="Password" name="password" required/><br />
         <input type="submit" value="Login"/>
-      </form>
-      <button id="logout-button">Logout</button>
+      </form><br>
     </header>
     <main>
       <form id="novel-form">
         <input type="text" placeholder="Title" name="title" required /><br />
         <input type="text" placeholder="Author" name="author" required /><br />
-        <input type="text" placeholder="Release Date" name="release_date" required/><br />
-        <input type="text" placeholder="Summary" name="summary" required /><br />
+        <input type="text" placeholder="Release Date" name="release_date" required><br />
+        <label>Book Summary</label><br>
+        <textarea name="summary" cols="30" rows="10"></textarea><br/>
         <input type="file" placeholder="Cover art" name="cover_art" accept="image/*" required/><br />
+        <input type="submit" />
+      </form><br>
+      <form id="graphic-novel-form">
+        <input type="text" placeholder="Title" name="title" required /><br />
+        <input type="text" placeholder="Author" name="author" required /><br />
+        <input type="text" placeholder="Release Date" name="release_date" required /><br />
+        <label>Book Summary</label><br>
+        <textarea name="summary" cols="30" rows="10"></textarea><br />
+        <input type="file" placeholder="Cover art" name="cover_art" accept="image/*" required /><br />
         <input type="submit" />
       </form>
     </main>
+    <footer>
+      <br>
+      <button id="logout-button">Logout</button>
+    </footer>
   </body>
-</html>
+  </html>
+  
