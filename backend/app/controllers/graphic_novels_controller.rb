@@ -2,24 +2,36 @@ class GraphicNovelsController < ApplicationController
     
     def index
         @graphic_novels = GraphicNovel.all
-        render json: { graphic_novels: @graphic_novels }
+        
+        serialized_graphic_novels = @graphic_novels.map do |graphic_novel|
+            NovelSerializer.serialize(graphic_novel)
+        end
+        # byebug
+        render json: serialized_graphic_novels
     end
 
     def show
         @graphic_novel = GraphicNovel.find params[:id]
-        render json: { graphic_novel: @graphic_novel }
+        
+        respond_to_post
     end
 
     def create
-        @graphic_novel = GraphicNovel.create(
-            title: params[:title],
-            author: params[:author],
-            cover_art: params[:cover_art],
-            release_date: params[:release_date],
-            summary: params[:summary]
-        )
-        render json: { graphic_novel: @graphic_novel }, status: :created
+        @graphic_novel = GraphicNovel.create graphic_novel_params
+
+        respond_to_post
+    end
+    
+    private
+
+    def graphic_novel_params
+        params.permit(:title, :author, :release_date, :summary, :cover_art)
     end
 
+    def respond_to_post
+        if @graphic_novel.valid?
+            render json: NovelSerializer.serialize(@graphic_novel)
+        end
+    end
 
 end
