@@ -5,7 +5,7 @@ class CreateGraphicNovels < ActiveRecord::Migration[6.0]
       t.string :author
       t.string :cover_art
       t.string :release_date
-      t.string :summary
+      t.text :summary
       t.timestamps
     end
   end

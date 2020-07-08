@@ -48,6 +48,5 @@ function handleNovelForm(event){
         },
         body: formData
     })
-        .then(response => response.json());
+        .then(response => response.json())
 }
-

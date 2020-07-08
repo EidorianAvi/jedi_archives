@@ -1,32 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jedi Archives</title>
-    <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="./app.css" />
     <script src="./app.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <form id="login-form">
-            <input type="text" placeholder="Username" name="username" required><br>
-            <input type="password" placeholder="Password" name="password" required><br>
-            <input type="submit" value="Login">
-        </form>
-        <button id="logout-button">Logout</button>
-
+      <form id="login-form">
+        <input
+          type="text"
+          placeholder="Username"
+          name="username"
+          required
+        /><br />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          required
+        /><br />
+        <input type="submit" value="Login" />
+      </form>
+      <button id="logout-button">Logout</button>
     </header>
     <main>
-    <form id="novel-form">
-        <input type="text" placeholder="Title" name="title" required><br>
-        <input type="text" placeholder="Author" name="author" required><br>
-        <input type="text" placeholder="Release Date" name="release_date" required><br>
-        <input type="text" placeholder="Summary" name="summary" required><br>
-        <input type="file" placeholder="Cover art" name="cover_art" required><br>
-        <input type="submit">
-    </form>
-
-</main>
-</body>
+      <form id="novel-form">
+        <input type="text" placeholder="Title" name="title" required /><br />
+        <input type="text" placeholder="Author" name="author" required /><br />
+        <input
+          type="text"
+          placeholder="Release Date"
+          name="release_date"
+          required
+        /><br />
+        <input
+          type="text"
+          placeholder="Summary"
+          name="summary"
+          required
+        /><br />
+        <input
+          type="file"
+          placeholder="Cover art"
+          name="cover_art"
+          accept="image/*"
+          required
+        /><br />
+        <input type="submit" />
+      </form>
+    </main>
+  </body>
 </html>
