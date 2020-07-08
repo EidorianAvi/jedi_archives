@@ -3,7 +3,11 @@ class NovelsController < ApplicationController
     def index
         @novels = Novel.all
         
-        render json: @novels
+        serialized_novels = @novels.map do |novel|
+            NovelSerializer.serialize(novel)
+        end
+        # byebug
+        render json: serialized_novels
     end
 
     def show
@@ -26,9 +30,7 @@ class NovelsController < ApplicationController
 
     def respond_to_post
         if @novel.valid?
-            novel_serializer = NovelSerializer.new(novel: @novel)
-            render json: novel_serializer.serialize_new_novel
-
+            render json: NovelSerializer.serialize(@novel)
         end
     end
 
