@@ -21,6 +21,12 @@ class GraphicNovelsController < ApplicationController
 
         respond_to_post
     end
+
+    def destroy
+        @graphic_novel = GraphicNovel.find params[:id]
+        @graphic_novel.destroy
+    end
+
     
     private
 

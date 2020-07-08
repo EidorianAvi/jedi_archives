@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  resources :novels, only: [:index, :create, :show]
-  resources :graphic_novels, only: [:index, :create, :show]
+  resources :novels
+  resources :graphic_novels
   resources :users, only: [:index, :create, :show]
   post "login", to: "authentication#login"
 end

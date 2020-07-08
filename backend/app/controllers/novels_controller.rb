@@ -6,7 +6,6 @@ class NovelsController < ApplicationController
         serialized_novels = @novels.map do |novel|
             NovelSerializer.serialize(novel)
         end
-        # byebug
         render json: serialized_novels
     end
 
@@ -21,7 +20,13 @@ class NovelsController < ApplicationController
 
         respond_to_post
     end
-    
+
+    def destroy
+        @novel = Novel.find params[:id]
+        @novel.destroy
+    end
+
+
     private
 
     def novel_params
