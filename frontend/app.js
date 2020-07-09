@@ -8,7 +8,9 @@ const logoutButton = document.querySelector("#logout-button");
 const novelAPI = "http://localhost:3000/novels";
 const graphicNovelAPI = "http://localhost:3000/graphic_novels";
 const userAPI = "http://localhost:3000/users";
-const createLink = document.querySelector('#create-link')
+const createLink = document.querySelector('#create-link');
+const formPage = document.querySelector('#form-page');
+console.log(formPage)
 
 
 createUserForm.addEventListener('submit', handleCreateSubmit);
@@ -66,9 +68,13 @@ function handleLoginData(formData) {
   })
     .then((response) => response.json())
     .then((response) => {
+      let loginConfirmation = document.querySelector("#login-confirmation");
+      if(response.error){
+        loginConfirmation.className = "error";
+        loginConfirmation.innerText = "Invalid Username or Password";
+      }else{
       const { token } = response;
       localStorage.setItem("token", token);
-      let loginConfirmation = document.querySelector("#login-confirmation");
       loginForm.reset();
       loginConfirmation.className = "success";
       loginConfirmation.innerText = "Welcome";
@@ -77,7 +83,7 @@ function handleLoginData(formData) {
         loginBox.style.display = "none";
       }, 2000)
       setTimeout(NovelArchivePage, 2000);
-    });
+    }});
 }
 
 novelForm.addEventListener('submit', handleNovelForm);
@@ -148,8 +154,9 @@ function GraphicNovelPage(){
 }
 
 function AddToArchives(){
-  
-
+  formPage.className = "none";
+  loginBox.className = "hidden";
+  createUserBox.className = "hidden"
 }
 
 function router(event){
