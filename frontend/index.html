@@ -9,24 +9,35 @@
     <script src="./app.js" defer></script>
   </head>
   <body>
-      <div id="login-box">
-        <form id="login-form">
-          <input type="text" placeholder="Username" name="username" required /><br />
-          <input type="password" placeholder="Password" name="password" required /><br />
-          <input type="submit" value="Login" /><br />
+    <header id="header" class="hidden">
+      <nav>
+        <a href="#/novel_archive">Novel Archive</a>
+        <a href="#/graphic_novel_archive">Graphic Novel Archive</a>
+      </nav>
+    </header>
+    <main id="page">
+        <div id="login-box" class="none">
+          <h2>Jedi Archives</h2>
+          <form id="login-form">
+            <input type="text" placeholder="Username" name="username" required /><br />
+            <input type="password" placeholder="Password" name="password" required /><br />
+            <input type="submit" value="Login" /><br />
+          </form>
+          <!-- <a href="#/archives">Continue as Guest</a><br> -->
+          <a id="create-link" href="#/create_user">Create User</a><br>
           <p id="login-confirmation"></p>
-        </form>
-      </div>
-    <!-- <main id="page">
-      <div id="create-box">
-      <form id="create-user-form">
+        </div>
+      <div id="create-box" class="hidden">
+        <h2>User Creation</h2>
+        <form id="create-user-form">
         <input type="text" placeholder="Username" name="username" required /><br />
         <input type="password" placeholder="Password" name="password" required /><br/>
-        <input type="submit" value="Create User" />
-        <p id="notifier"></p>
+        <input type="submit" value="Create User"/>
       </form>
+      <a href="#/"> Login</a><br>
+      <p id="notifier"></p>
     </div>
-      
+      <div id="novelBox" class="hidden">
       <form id="novel-form">
         <input type="text" placeholder="Title" name="title" required /><br />
         <input type="text" placeholder="Author" name="author" required /><br />
@@ -36,6 +47,8 @@
         <input type="file" placeholder="Cover art" name="cover_art" accept="image/*" required/><br />
         <input type="submit" />
       </form><br>
+      </div>
+      <div id="graphicNovelBox" class="hidden">
       <form id="graphic-novel-form">
         <input type="text" placeholder="Title" name="title" required /><br />
         <input type="text" placeholder="Author" name="author" required /><br />
@@ -45,11 +58,12 @@
         <input type="file" placeholder="Cover art" name="cover_art" accept="image/*" required /><br />
         <input type="submit" />
       </form>
+      </div>
     </main>
     <footer>
       <br>
-      <button id="logout-button">Logout</button>
-    </footer> -->
+      <button id="logout-button" class="hidden">Logout</button>
+    </footer>
   </body>
   </html>
   

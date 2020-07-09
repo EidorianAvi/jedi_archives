@@ -12,6 +12,7 @@ class ApplicationController < ActionController::API
                 payload = JWT.decode(token, secret)[0]
 
                 @user = User.find(payload["user_id"])
+                byebug
             rescue
                 render json: { error: "Must be logged in to do this."}, status: :unauthorized
             end

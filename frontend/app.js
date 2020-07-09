@@ -1,13 +1,17 @@
 const createUserForm = document.querySelector("#create-user-form");
+const createUserBox = document.querySelector('#create-box')
 const loginForm = document.querySelector("#login-form");
+const loginBox = document.querySelector('#login-box')
 const novelForm = document.querySelector("#novel-form");
 const graphicNovelForm = document.querySelector("#graphic-novel-form");
 const logoutButton = document.querySelector("#logout-button");
 const novelAPI = "http://localhost:3000/novels";
 const graphicNovelAPI = "http://localhost:3000/graphic_novels";
 const userAPI = "http://localhost:3000/users";
+const createLink = document.querySelector('#create-link')
 
-// createUserForm.addEventListener('submit', handleCreateSubmit);
+
+createUserForm.addEventListener('submit', handleCreateSubmit);
 
 function handleCreateSubmit(event) {
   event.preventDefault();
@@ -31,6 +35,7 @@ function handleCreateData(formData) {
       if (response.ok) {
         notifier.className = "success";
         notifier.textContent = "User Created";
+        setTimeout(HomePage, 2000);
       } else {
         notifier.className = "error";
         notifier.textContent = "Username already taken";
@@ -64,13 +69,17 @@ function handleLoginData(formData) {
       const { token } = response;
       localStorage.setItem("token", token);
       let loginConfirmation = document.querySelector("#login-confirmation");
-      console.log(loginConfirmation);
+      loginForm.reset();
       loginConfirmation.className = "success";
       loginConfirmation.innerText = "Welcome";
+      setTimeout(()=>{
+        const loginBox = document.querySelector('#login-box');
+        loginBox.style.display = "none";
+      }, 2000)
     });
 }
 
-// novelForm.addEventListener('submit', handleNovelForm);
+novelForm.addEventListener('submit', handleNovelForm);
 
 function handleNovelForm(event) {
   event.preventDefault();
@@ -87,7 +96,7 @@ function handleNovelForm(event) {
     .then(novelForm.reset());
 }
 
-// graphicNovelForm.addEventListener('submit', handleGraphicNovelForm);
+graphicNovelForm.addEventListener('submit', handleGraphicNovelForm);
 
 function handleGraphicNovelForm(event) {
   event.preventDefault();
@@ -104,47 +113,57 @@ function handleGraphicNovelForm(event) {
     .then(graphicNovelForm.reset());
 }
 
-// logoutButton.addEventListener('click', () => {localStorage.removeItem('token')});
+logoutButton.addEventListener('click', () => {localStorage.removeItem('token')});
 
-// const main = document.querySelector('#page');
-// const routes = {
-//     '/': HomePage,
-//     '/create_user': CreateUserPage,
-//     '/archive': ArchivePage
-// }
+const main = document.querySelector('#page');
+const routes = {
+    '/' : HomePage,
+    '/create_user': CreateUserPage,
+    '/novel_archive': NovelArchivePage,
+    '/graphic_novel_archive': GraphicNovelPage,
+    '/add-to-archives': AddToArchives,
+}
 
-// function HomePage(){
-//     return (`
-// <div id="login-box">
-// <form id="login-form">
-//     <input type="text" placeholder="Username" name="username" required/><br />
-//     <input type="password" placeholder="Password" name="password" required/><br />
-//     <input type="submit" value="Login"/><br/>
-//     <p id="login-confirmation></p>
-// </form>
-// </div>
-//     `)
-// }
 
-// function CreateUserPage(){
-// }
+function HomePage(){
+  loginBox.className = "none";
+  createUserBox.className = "hidden";
+}
 
-// function ArchivePage(){
-// }
+function CreateUserPage(){
+  loginBox.className = "hidden";
+  createUserBox.className = "none";
+}
 
-// function router(event){
-//     const path = window.location.hash.split('#')[1] || "/";
-//     const page = routes[path];
-//     if(page){
-//         main.innerHTML = page();
-//     } else {
-//         main.innerHTML = `
-//             <section>
-//                 <h1>404 ERROR</h1>
-//             </section>
-//         `
-//     }
-// }
 
-// window.addEventListener('hashchange', router);
-// window.addEventListener('load', router);
+function NovelArchivePage(){
+
+}
+
+function GraphicNovelPage(){
+
+}
+
+function AddToArchives(){
+
+
+}
+
+function router(event){
+    const path = window.location.hash.split('#')[1] || "/";
+    console.log(path)
+    const page = routes[path];
+    console.log(page)
+    if(page){
+      page();
+    } else {
+        main.innerHTML = `
+            <section>
+                <h1>404 ERROR</h1>
+            </section>
+        `
+    }
+}
+
+window.addEventListener('hashchange', router);
+window.addEventListener('load', router);
