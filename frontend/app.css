@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background: url(./images/Jedi_Archives.png) no-repeat center center fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#create-box{
+    background: white;
+    width: 20vw;
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+
+}
+
+#login-box {
+    width: 20vw;
+    height: 42vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    border: solid 4px #4BF3F6;
+}
+#login-form {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}

@@ -4,23 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jedi Archives</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="./app.css" />
     <script src="./app.js" defer></script>
   </head>
   <body>
-    <header>
+      <div id="login-box">
+        <form id="login-form">
+          <input type="text" placeholder="Username" name="username" required /><br />
+          <input type="password" placeholder="Password" name="password" required /><br />
+          <input type="submit" value="Login" /><br />
+          <p id="login-confirmation"></p>
+        </form>
+      </div>
+    <!-- <main id="page">
+      <div id="create-box">
       <form id="create-user-form">
         <input type="text" placeholder="Username" name="username" required /><br />
         <input type="password" placeholder="Password" name="password" required /><br/>
         <input type="submit" value="Create User" />
-      </form><br>
-      <form id="login-form">
-        <input type="text" placeholder="Username" name="username" required/><br />
-        <input type="password" placeholder="Password" name="password" required/><br />
-        <input type="submit" value="Login"/>
-      </form><br>
-    </header>
-    <main>
+        <p id="notifier"></p>
+      </form>
+    </div>
+      
       <form id="novel-form">
         <input type="text" placeholder="Title" name="title" required /><br />
         <input type="text" placeholder="Author" name="author" required /><br />
@@ -43,7 +49,7 @@
     <footer>
       <br>
       <button id="logout-button">Logout</button>
-    </footer>
+    </footer> -->
   </body>
   </html>
   
