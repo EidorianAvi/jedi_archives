@@ -10,7 +10,11 @@ const graphicNovelAPI = "http://localhost:3000/graphic_novels";
 const userAPI = "http://localhost:3000/users";
 const createLink = document.querySelector('#create-link');
 const formPage = document.querySelector('#form-page');
-console.log(formPage)
+const novelPage = document.querySelector('#novel-archive-page');
+const novelCards = document.querySelector('#novel-cards')
+const graphicNovelPage = document.querySelector('#graphic-novel-archive-page');
+const graphicNovelCards = document.querySelector('#graphic-novel-cards')
+
 
 
 createUserForm.addEventListener('submit', handleCreateSubmit);
@@ -86,6 +90,17 @@ function handleLoginData(formData) {
     }});
 }
 
+fetch(novelAPI)
+  .then(response => response.json())
+  .then(renderNovels)
+
+function renderNovels(novels) {
+  novels.forEach(novel => {
+    console.log(novel);
+  })
+}
+
+
 novelForm.addEventListener('submit', handleNovelForm);
 
 function handleNovelForm(event) {
@@ -147,16 +162,26 @@ function CreateUserPage(){
 
 function NovelArchivePage(){
   header.className ="none";
+  novelPage.className="none";
+  formPage.className = "hidden";
+  loginBox.className = "hidden";
+  createUserBox.className = "hidden";
+  graphicNovelPage.className = "hidden";
 }
 
 function GraphicNovelPage(){
-
+  header.className = "none";
+  graphicNovelPage.className = "none";
+  formPage.className = "hidden";
+  loginBox.className = "hidden";
+  createUserBox.className = "hidden";
+  novelPage.className = "hidden";
 }
 
 function AddToArchives(){
   formPage.className = "none";
   loginBox.className = "hidden";
-  createUserBox.className = "hidden"
+  createUserBox.className = "hidden";
 }
 
 function router(event){
