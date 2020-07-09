@@ -9,11 +9,11 @@
     <script src="./app.js" defer></script>
   </head>
   <body>
-    <header id="header" class="hidden">
-      <nav>
+    <header id="header" class="none">
         <a href="#/novel_archive">Novel Archive</a>
         <a href="#/graphic_novel_archive">Graphic Novel Archive</a>
-      </nav>
+        <a href="#/add_to_archives">Contribute</a>
+        <a href ="/" id="logout-button" class="none">Logout</a>
     </header>
     <main id="page">
         <div id="login-box" class="none">
@@ -23,7 +23,6 @@
             <input type="password" placeholder="Password" name="password" required /><br />
             <input type="submit" value="Login" /><br />
           </form>
-          <!-- <a href="#/archives">Continue as Guest</a><br> -->
           <a id="create-link" href="#/create_user">Create User</a><br>
           <p id="login-confirmation"></p>
         </div>
@@ -37,7 +36,8 @@
       <a href="#/"> Login</a><br>
       <p id="notifier"></p>
     </div>
-      <div id="novelBox" class="hidden">
+    <div id="form-page" class="hidden">
+      <div id="novelBox">
       <form id="novel-form">
         <input type="text" placeholder="Title" name="title" required /><br />
         <input type="text" placeholder="Author" name="author" required /><br />
@@ -59,11 +59,8 @@
         <input type="submit" />
       </form>
       </div>
+      </div>
     </main>
-    <footer>
-      <br>
-      <button id="logout-button" class="hidden">Logout</button>
-    </footer>
   </body>
   </html>
   

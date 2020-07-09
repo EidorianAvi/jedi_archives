@@ -76,6 +76,7 @@ function handleLoginData(formData) {
         const loginBox = document.querySelector('#login-box');
         loginBox.style.display = "none";
       }, 2000)
+      setTimeout(NovelArchivePage, 2000);
     });
 }
 
@@ -114,30 +115,32 @@ function handleGraphicNovelForm(event) {
 }
 
 logoutButton.addEventListener('click', () => {localStorage.removeItem('token')});
-
+const header = document.querySelector('header')
 const main = document.querySelector('#page');
 const routes = {
     '/' : HomePage,
     '/create_user': CreateUserPage,
     '/novel_archive': NovelArchivePage,
     '/graphic_novel_archive': GraphicNovelPage,
-    '/add-to-archives': AddToArchives,
+    '/add_to_archives': AddToArchives,
 }
 
 
 function HomePage(){
   loginBox.className = "none";
   createUserBox.className = "hidden";
+  header.className = "hidden";
 }
 
 function CreateUserPage(){
   loginBox.className = "hidden";
   createUserBox.className = "none";
+  header.className = "hidden";
 }
 
 
 function NovelArchivePage(){
-
+  header.className ="none";
 }
 
 function GraphicNovelPage(){
@@ -145,7 +148,7 @@ function GraphicNovelPage(){
 }
 
 function AddToArchives(){
-
+  
 
 }
 
