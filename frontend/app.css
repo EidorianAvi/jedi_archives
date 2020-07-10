@@ -241,6 +241,16 @@ input[type=password]{
     text-align: center;
 }
 
+section{
+    background: #C5984B !important;
+    border: 2px solid ;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    width: 35vw;
+    height: 60vh;
+    background:white;
+}
 
 #novel-description ul {
     display:flex;
@@ -253,10 +263,9 @@ input[type=password]{
     margin: 3px;
 }
 
-
-#novel-description button {
-    position: relative;
-
+#summary a{
+    color: black;
+    text-decoration: none;
 }
 
 

@@ -99,6 +99,7 @@ function renderNovelPage(event){
 function renderNovels(novels){
   novels.forEach(novel => {
     let li = document.createElement('li');
+      li.id = novel.id;
       li.innerHTML = `
       <div id="novel-card">
           <img src=${novel.cover_art} id="card-image">
@@ -107,16 +108,35 @@ function renderNovels(novels){
           <ul>
             <li>Author: ${novel.author}</li>
             <li>Release Date: ${novel.release_date}</li>
-            <li><button id="summary">View Summary</button></li>
+            <li><button class="summary">Summary</button></li>
           </ul>
           </div>
         </div>
-          `;
+          `
           novelPage.append(li);
-          summaryButton(li);
         })
+        let summaries = document.querySelectorAll('.summary')
+        summaries.forEach(summary => renderSummary(summary));
       }
 
+function renderSummary(summary){
+  summary.addEventListener('click',()=>{
+    let summaryID= event.path[5].id;
+    fetch(novelAPI)
+      .then(response => response.json())
+      .then(results => results.forEach(result => {
+        if(result.id == summaryID){
+          let section = document.createElement('section')
+          section.innerHTML = `
+            <p>${result.summary}</p>
+          `
+          novelPage.className = 'hidden';
+          header.className = 'hidden';
+          page.append(section)
+        }
+      }))
+    })
+}
 
 
 novelForm.addEventListener('submit', handleNovelForm);
@@ -156,12 +176,12 @@ function handleGraphicNovelForm(event) {
 logoutButton.addEventListener('click', () => {localStorage.removeItem('token')});
 const header = document.querySelector('header')
 const main = document.querySelector('#page');
-const routes = {
+let routes = {
     '/' : HomePage,
     '/create_user': CreateUserPage,
     '/novel_archive': NovelArchivePage,
     '/graphic_novel_archive': GraphicNovelPage,
-    '/add_to_archives': AddToArchives,
+    '/add_to_archives': AddToArchives
 }
 
 
@@ -198,12 +218,14 @@ function GraphicNovelPage(){
 
 function AddToArchives(){
   formPage.className = "none";
+  header.className = "hidden";
   loginBox.className = "hidden";
   novelPage.className = "hidden";
   graphicNovelPage.className = "hidden";
   createUserBox.className = "hidden";
-
 }
+
+
 
 function router(event){
     const path = window.location.hash.split('#')[1] || "/";
