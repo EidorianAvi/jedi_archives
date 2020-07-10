@@ -225,36 +225,38 @@ function handleNovelForm(event) {
     body: formData,
   })
     .then((response) => response.json())
-    .then(novelForm.reset());
-}
-
-graphicNovelForm.addEventListener('submit', handleGraphicNovelForm);
-
-function handleGraphicNovelForm(event) {
-  event.preventDefault();
-  const formData = new FormData(event.target);
-  fetch(graphicNovelAPI, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-      Accept: "application/json",
-    },
-    body: formData,
-  })
+    .then(novelForm.reset())
+    .then(location.reload());
+  }
+  
+  graphicNovelForm.addEventListener('submit', handleGraphicNovelForm);
+  
+  function handleGraphicNovelForm(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    fetch(graphicNovelAPI, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Accept: "application/json",
+      },
+      body: formData,
+    })
     .then((response) => response.json())
-    .then(graphicNovelForm.reset());
-}
-
-logoutButton.addEventListener('click', () => {localStorage.removeItem('token')});
-const header = document.querySelector('header')
-const main = document.querySelector('#page');
-let routes = {
+    .then(graphicNovelForm.reset())
+    .then(location.reload());
+  }
+  
+  logoutButton.addEventListener('click', () => {localStorage.removeItem('token')});
+  const header = document.querySelector('header')
+  const main = document.querySelector('#page');
+  let routes = {
     '/' : HomePage,
     '/create_user': CreateUserPage,
     '/novel_archive': NovelArchivePage,
     '/graphic_novel_archive': GraphicNovelPage,
     '/add_to_archives': AddToArchives
-}
+  }
 
 
 function HomePage(){

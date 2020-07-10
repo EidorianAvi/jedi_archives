@@ -224,6 +224,13 @@ input[type="password"] {
   align-items: center;
 }
 
+#graphic-novel-archive-page {
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 #novel-card {
   background: #d5a44e !important;
   opacity: 0.8;
@@ -268,6 +275,7 @@ section {
 }
 p{
   padding: 2px;
+
 }
 
 #novel-description ul {
