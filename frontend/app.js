@@ -17,9 +17,14 @@ const exitButton = document.querySelector("#exit");
 
 
 
-window.addEventListener("DOMContentLoaded", renderNovelPage)
+window.addEventListener("DOMContentLoaded", renderNovelPages)
 
 createUserForm.addEventListener('submit', handleCreateSubmit);
+
+function renderNovelPages(){
+  renderNovelPage();
+  renderGraphicNovelPage();
+}
 
 function handleCreateSubmit(event) {
   event.preventDefault();
@@ -118,10 +123,10 @@ function renderNovels(novels){
           novelPage.append(li);
         })
         let summaries = document.querySelectorAll('.summary')
-        summaries.forEach(summary => renderSummary(summary));
+        summaries.forEach(summary => renderNovelSummary(summary));
       }
 
-function renderSummary(summary){
+function renderNovelSummary(summary){
   summary.addEventListener('click',()=>{
     let summaryID= event.path[5].id;
     fetch(novelAPI)
@@ -141,6 +146,7 @@ function renderSummary(summary){
               section.remove()
             }
             exitButton.className = 'hidden';
+            exitButton.href="#/novel_archive"
             NovelArchivePage()
           })
         }
@@ -148,6 +154,62 @@ function renderSummary(summary){
     })
 }
 
+function renderGraphicNovelPage(event) {
+  fetch(graphicNovelAPI)
+    .then(response => response.json())
+    .then(renderGraphicNovels)
+}
+
+function renderGraphicNovels(graphicNovels) {
+  graphicNovels.forEach(graphicNovel => {
+    let li = document.createElement('li');
+    li.className = graphicNovel.id
+    li.innerHTML = `
+      <div id="novel-card">
+          <img src=${graphicNovel.cover_art} id="card-image">
+          <div id='novel-description'>
+          <h3>${graphicNovel.title}</h3>
+          <ul>
+            <li>Author: ${graphicNovel.author}</li>
+            <li>Release Date: ${graphicNovel.release_date}</li>
+            <li><button class="summary">Summary</button></li>
+          </ul>
+          </div>
+        </div>
+          `
+    graphicNovelPage.append(li);
+  })
+  let summaries = document.querySelectorAll('.summary')
+  summaries.forEach(summary => renderGraphicNovelSummary(summary));
+}
+
+function renderGraphicNovelSummary(summary) {
+  summary.addEventListener('click', () => {
+    let summaryID = event.path[5].className;
+    fetch(graphicNovelAPI)
+      .then(response => response.json())
+      .then(results => results.forEach(result => {
+        if (result.id == summaryID) {
+          let section = document.createElement('section')
+          section.innerHTML = `
+            <p>${result.summary}</p>
+          `
+          graphicNovelPage.className = 'hidden';
+          header.className = 'hidden';
+          page.append(section);
+          exitButton.className = "none";
+          exitButton.addEventListener('click', () => {
+            if (section) {
+              section.remove()
+            }
+            exitButton.className = 'hidden';
+            exitButton.href ="#/graphic_novel_archive"
+            GraphicNovelPage();
+          })
+        }
+      }))
+  })
+}
 
 novelForm.addEventListener('submit', handleNovelForm);
 
