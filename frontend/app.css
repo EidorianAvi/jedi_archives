@@ -3,7 +3,8 @@
 }
 
 header {
-    position: fixed;
+    position: absolute;
+    top: 0;
     display: flex;
     align-items:center;
     justify-content: space-around;
@@ -27,12 +28,15 @@ header a:hover {
     color: #D5A44E;
 }
 
-main {
-    background: url(./images/Jedi_Archives.png) no-repeat center center fixed;
+body {
+    background: url(./images/Jedi_Archives.png) center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+
 }
 
 #create-box{
@@ -110,7 +114,9 @@ input[type=password]{
     text-align: center;
     padding: 2px;
 }
-
+#novel-cards{
+    color:white;
+}
 #form-page{
     display: flex;
     align-items: center;
@@ -193,6 +199,66 @@ input[type=password]{
     font-size: 20px;
     color: white
 }
+
+#novel-archive-page {
+    padding-top: 1800px; 
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#novel-card{
+    background: #D5A44E !important;
+    opacity: .8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 25vw;
+    height: 20vh;
+    background: white;
+    border: 2px solid #602714;
+    margin: .5em;
+}
+
+#card-image{
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#novel-description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#novel-description h3{
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+#novel-description ul {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#novel-description li {
+    margin: 3px;
+}
+
+
+#novel-description button {
+    position: relative;
+
+}
+
 
 a {
     display: flex;
