@@ -1,295 +1,319 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 header {
-    position: absolute;
-    top: 0;
-    display: flex;
-    align-items:center;
-    justify-content: space-around;
-    opacity: .9;
-    left: 10%;
-    width: 80vw;
-    height: 10vh;
-    background:#602714 ;
-    border-radius: 0 0 25px 25px;
-    box-shadow: 0px 3px 10px #D5A44E;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  opacity: 0.9;
+  left: 10%;
+  width: 80vw;
+  height: 10vh;
+  background: #602714;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0px 3px 10px #d5a44e;
 }
 
-header a{
-    font-size: 18px;
-    text-decoration: none;
-    transition: transform .8s;
+header a {
+  font-size: 18px;
+  text-decoration: none;
+  transition: transform 0.8s;
 }
 
 header a:hover {
-    transform: scale(1.05);
-    color: #D5A44E;
+  transform: scale(1.05);
+  color: #d5a44e;
 }
 
 body {
-    background: url(./images/Jedi_Archives.png) center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-
+  background: url(./images/Jedi_Archives.png) center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-#create-box{
-    width: 20vw;
-    height: 42vh;
-    background:#602714;
-    opacity: .9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25px;
-    border: solid 4px #D5A44E;
-    box-shadow: 5px 5px 10px #5C3A3A;
+#create-box {
+  width: 20vw;
+  height: 42vh;
+  background: #602714;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  border: solid 4px #d5a44e;
+  box-shadow: 5px 5px 10px #5c3a3a;
 }
 
 #login-box {
-    width: 20vw;
-    height: 42vh;
-    background:#602714;
-    opacity: .9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25px;
-    border: solid 4px #D5A44E;
-    box-shadow: 5px 5px 10px #5C3A3A;
-
+  width: 20vw;
+  height: 42vh;
+  background: #602714;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  border: solid 4px #d5a44e;
+  box-shadow: 5px 5px 10px #5c3a3a;
 }
 #login-form {
-    padding: 20px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 #login-form input {
-    border-radius: 6px;
+  border-radius: 6px;
 }
 
 #login-confirmation {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 #create-user-form {
-    padding: 20px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-#create-user-form input{
- border-radius: 6px;
+#create-user-form input {
+  border-radius: 6px;
 }
 
 #notifier {
-    font-size: 18px;
+  font-size: 18px;
 }
 
-h2{
-    font-size: 30px;
-    color: #D5A44E;
+h2 {
+  font-size: 30px;
+  color: #d5a44e;
 }
 
-input[type=text]{
-    text-align: center;
-    padding: 2px;
-    border: solid 10px #FEE91D,
+input[type="text"] {
+  text-align: center;
+  padding: 2px;
 }
 
-input[type=password]{
-    text-align: center;
-    padding: 2px;
+input[type="password"] {
+  text-align: center;
+  padding: 2px;
 }
-#novel-cards{
-    color:white;
+#novel-cards {
+  color: white;
 }
-#form-page{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 80vw;
-    height: 70vh;
-}
-
-#novel-box{
-    width: 25vw;
-    height: 70vh;
-    background: rgb(88,255,253);
-    background: radial-gradient(circle, rgba(88,255,253,1) 0%, rgb(22, 143, 203) 100%, rgb(29, 192, 225) 100%);
-    opacity: .9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25px;
-    border: solid 4px #02369E;
-    box-shadow: 0px -10px 10px #02369E;
+#form-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80vw;
+  height: 70vh;
 }
 
-#novel-form{
-    color: black;
-    padding: 20px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+#novel-box {
+  width: 25vw;
+  height: 70vh;
+  background: rgb(88, 255, 253);
+  background: radial-gradient(
+    circle,
+    rgba(88, 255, 253, 1) 0%,
+    rgb(22, 143, 203) 100%,
+    rgb(29, 192, 225) 100%
+  );
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  border: solid 4px #02369e;
+  box-shadow: 0px -10px 10px #02369e;
+}
+
+#novel-form {
+  color: black;
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 #novel-box h2 {
-    color: black !important;
+  color: black !important;
 }
 
 #novel-form label {
-    text-align: center;
-    font-size: 20px;
+  text-align: center;
+  font-size: 20px;
 }
 
 #novel-form input {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
-
-#graphic-novel-box{
-    width: 25vw;
-    height: 70vh;
-    background: rgb(241,205,199);
-    background: radial-gradient(circle, rgba(241,205,199,1) 0%, rgba(164,12,3,1) 100%);
-    opacity: .9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25px;
-    border: solid 4px #C40002;
-    box-shadow: 0px -10px 10px #C40002;
+#graphic-novel-box {
+  width: 25vw;
+  height: 70vh;
+  background: rgb(241, 205, 199);
+  background: radial-gradient(
+    circle,
+    rgba(241, 205, 199, 1) 0%,
+    rgba(164, 12, 3, 1) 100%
+  );
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  border: solid 4px #c40002;
+  box-shadow: 0px -10px 10px #c40002;
 }
 
-#graphic-novel-form{
-    padding: 20px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+button:hover{
+  display: pointer;
 }
 
-#graphic-novel-form input{
-    border-radius: 20px;
+#graphic-novel-form {
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#graphic-novel-form input {
+  border-radius: 20px;
+}
+
+#graphic-novel-form input[type="file"] {
+  color: white !important;
 }
 
 #graphic-novel-box h2 {
-    color: white !important;
+  color: white !important;
 }
 
 #graphic-novel-form label {
-    text-align: center;
-    font-size: 20px;
-    color: white
+  text-align: center;
+  font-size: 20px;
+  color: white;
 }
 
 #novel-archive-page {
-    padding-top: 1800px; 
-    width: 90vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  padding-top: 1800px;
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-#novel-card{
-    background: #D5A44E !important;
-    opacity: .8;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 25vw;
-    height: 20vh;
-    background: white;
-    border: 2px solid #602714;
-    margin: .5em;
+#novel-card {
+  background: #d5a44e !important;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 25vw;
+  height: 20vh;
+  background: white;
+  border: 2px solid #602714;
+  margin: 0.5em;
 }
 
-#card-image{
-    max-width: 100%;
-    max-height: 100%;
-    display: flex;
-    justify-content: flex-start;
+#card-image {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: flex-start;
 }
 
-#novel-description{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+#novel-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
-#novel-description h3{
-    font-size: 20px;
-    font-weight: 500;
-    text-align: center;
+#novel-description h3 {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
 }
 
-section{
-    background: #C5984B !important;
-    border: 2px solid ;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    width: 35vw;
-    height: 60vh;
-    background:white;
+section {
+  background: #c5984b !important;
+  border: 2px solid;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  width: 35vw;
+  height: 60vh;
+  background: white;
 }
 
 #novel-description ul {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #novel-description li {
-    margin: 3px;
+  margin: 3px;
 }
 
-#summary a{
-    color: black;
-    text-decoration: none;
+#summary a {
+  color: black;
+  text-decoration: none;
 }
-
 
 a {
-    display: flex;
-    justify-content: center;
-    color: white;
-}
-a:hover {
-    display: pointer;
-}
-#login-confirmation {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  color: white;
 }
 
+
+a:hover {
+  display: pointer;
+}
+#login-confirmation {
+  display: flex;
+  justify-content: center;
+}
+
+#exit { 
+  position: absolute;
+  text-decoration: none;
+  bottom: 6vh;
+  font-size: 28px;
+  right: 47vw;
+  color: white;
+}
+
+
 .success {
-    color: lightgreen;
+  color: lightgreen;
 }
 
 .error {
-    color: red;
+  color: red;
 }
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }

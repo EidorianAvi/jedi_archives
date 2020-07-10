@@ -13,6 +13,8 @@ const formPage = document.querySelector('#form-page');
 const novelPage = document.querySelector('#novel-archive-page');
 const graphicNovelPage = document.querySelector('#graphic-novel-archive-page');
 const graphicNovelCards = document.querySelector('#graphic-novel-cards');
+const exitButton = document.querySelector("#exit");
+
 
 
 window.addEventListener("DOMContentLoaded", renderNovelPage)
@@ -132,7 +134,15 @@ function renderSummary(summary){
           `
           novelPage.className = 'hidden';
           header.className = 'hidden';
-          page.append(section)
+          page.append(section);
+          exitButton.className = "none";
+          exitButton.addEventListener('click', () => {
+            if (section) {
+              section.remove()
+            }
+            exitButton.className = 'hidden';
+            NovelArchivePage()
+          })
         }
       }))
     })
@@ -189,14 +199,15 @@ function HomePage(){
   loginBox.className = "none";
   createUserBox.className = "hidden";
   header.className = "hidden";
+  exitButton.className ="hidden";
 }
 
 function CreateUserPage(){
   loginBox.className = "hidden";
   createUserBox.className = "none";
   header.className = "hidden";
+  exitButton.className = "hidden";
 }
-
 
 function NovelArchivePage(){
   header.className ="none";
@@ -205,6 +216,7 @@ function NovelArchivePage(){
   loginBox.className = "hidden";
   createUserBox.className = "hidden";
   graphicNovelPage.className = "hidden";
+  exitButton.className = "hidden";
 }
 
 function GraphicNovelPage(){
@@ -214,10 +226,13 @@ function GraphicNovelPage(){
   loginBox.className = "hidden";
   createUserBox.className = "hidden";
   novelPage.className = "hidden";
+  exitButton.className = "hidden";
+
 }
 
 function AddToArchives(){
   formPage.className = "none";
+  exitButton.className = "none";
   header.className = "hidden";
   loginBox.className = "hidden";
   novelPage.className = "hidden";
@@ -225,19 +240,11 @@ function AddToArchives(){
   createUserBox.className = "hidden";
 }
 
-
-
 function router(event){
     const path = window.location.hash.split('#')[1] || "/";
     const page = routes[path];
     if(page){
       page();
-    } else {
-        main.innerHTML = `
-            <section>
-                <h1>404 ERROR</h1>
-            </section>
-        `
     }
 }
 
