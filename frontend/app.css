@@ -1,6 +1,12 @@
+
+
 * {
   box-sizing: border-box;
+  font-family: 'Muli', sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
+
 
 header {
   position: absolute;
@@ -183,10 +189,6 @@ input[type="password"] {
   box-shadow: 0px -10px 10px #c40002;
 }
 
-button:hover{
-  display: pointer;
-}
-
 #graphic-novel-form {
   padding: 20px;
   margin: 10px;
@@ -261,8 +263,11 @@ section {
   display: flex;
   align-items: center;
   width: 35vw;
-  height: 60vh;
+  height: 65vh;
   background: white;
+}
+p{
+  padding: 2px;
 }
 
 #novel-description ul {
@@ -303,9 +308,20 @@ a:hover {
   font-size: 28px;
   right: 47vw;
   color: white;
+  transition: transform(1.5s);
 }
 
+#exit:hover{
+  transform: scale(1.04)
+}
 
+.summary {
+  margin-top: 7px;
+  border-radius: 5px;
+}
+.summary:hover {
+  display: pointer;
+}
 .success {
   color: lightgreen;
 }
