@@ -218,7 +218,7 @@ input[type="password"] {
 }
 
 #novel-archive-page {
-  padding-top: 1800px;
+  /* padding-top: 1800px; */
   width: 90vw;
   display: flex;
   flex-wrap: wrap;
