@@ -214,6 +214,7 @@ function renderGraphicNovelSummary(summary) {
 novelForm.addEventListener('submit', handleNovelForm);
 
 function handleNovelForm(event) {
+  console.log(event)
   event.preventDefault();
   const formData = new FormData(event.target);
   fetch(novelAPI, {
@@ -226,7 +227,6 @@ function handleNovelForm(event) {
   })
     .then((response) => response.json())
     .then(novelForm.reset())
-    .then(location.reload());
   }
   
   graphicNovelForm.addEventListener('submit', handleGraphicNovelForm);
@@ -244,7 +244,6 @@ function handleNovelForm(event) {
     })
     .then((response) => response.json())
     .then(graphicNovelForm.reset())
-    .then(location.reload());
   }
   
   logoutButton.addEventListener('click', () => {localStorage.removeItem('token')});
